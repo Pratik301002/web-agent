@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Web Copilot",
+  "version": "1.0.0",
+  "description": "A premium AI assistant sidebar.",
+  "action": {
+    "default_title": "Open Web Copilot"
+  },
+  "background": {
+    "service_worker": "src/background.ts",
+    "type": "module"
+  },
+  "permissions": ["sidePanel"],
+  "side_panel": {
+    "default_path": "index.html"
+  }
+}

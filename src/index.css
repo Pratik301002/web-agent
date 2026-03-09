@@ -1,0 +1,47 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --background: 240 10% 2%;
+    --foreground: 0 0% 100%;
+    --sidebar-bg: rgba(6, 6, 6, 0.85);
+    --sidebar-border: rgba(255, 255, 255, 0.12);
+  }
+  
+  html, body {
+    @apply antialiased;
+    background-color: transparent;
+    color: hsl(var(--foreground));
+    margin: 0;
+    padding: 0;
+    width: 380px;
+    height: 100vh;
+    overflow: hidden;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+  }
+  
+  /* Custom scrollbar for webkit */
+  ::-webkit-scrollbar {
+    width: 5px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 8px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: rgba(255, 255, 255, 0.3);
+  }
+}
+
+@layer utilities {
+  .glass-panel {
+    @apply bg-[var(--sidebar-bg)] backdrop-blur-2xl border-l border-[var(--sidebar-border)] shadow-[0_0_40px_rgba(0,0,0,0.8)];
+  }
+  
+  .glass-button {
+    @apply bg-white/[0.04] hover:bg-white/[0.08] border border-white/[0.08] hover:border-white/[0.15] transition-all duration-300 backdrop-blur-xl shadow-sm hover:shadow-md;
+  }
+}
